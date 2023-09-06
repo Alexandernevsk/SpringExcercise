@@ -1,10 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./newcode/pages/HomePage";
+import RecipePage from "./newcode/pages/RecipePage";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<HomePage />} />
+        <Route path="/recipe" element = {<RecipePage/>} />
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
+);
